@@ -55,17 +55,18 @@
     
     <h3>Agree to the Terms and Conditions</h3>
   
-    <input type="checkbox" name="Yes" value="Yes">Yes<br>
-    <input type="checkbox" name="No" value="No">No<br>
+    <input type="checkbox" name="Yes" id="noButton"value="Yes">Yes<br>
+    <input type="checkbox" name="No" id="noButton" value="No">No<br>
     
   </form>
-            <button type="button" class="btn btn-success" onclick=checkboxes()>Submit</button>
+            <button id="submit" type="button" class="btn btn-success" onclick=checkboxes();getinformation();>Submit</button>
           </form>
 
 <script> 
 function checkboxes()
-{
- var firstName =  document.getElementById("fName").value;
+{ 
+  
+var firstName =  document.getElementById("fName").value;
  if(firstName == "")
  var lastName =  document.getElementById("lName").value;
  if(lastName == "")
@@ -73,23 +74,32 @@ function checkboxes()
  if(Email == "")
 
  
- {
-  document.getElementById("fName"). style.backgroundColor = "red";
+ { document.getElementById("fName"). style.backgroundColor = "red";
   document.getElementById("fName").focus();
   document.getElementById("lName"). style.backgroundColor = "red";
   document.getElementById("lName").focus();
   document.getElementById("zName"). style.backgroundColor = "red";
   document.getElementById("zName").focus();
-
  }
- var yesButton = document.getElementById.checked("Yes").value;
- var noButton =document.getElementById("No").value;
- if(document.getElementById("Yes").checked == false) 
- if(document.getElementById("No") == false) 
- {
-
-
+  
 }
+function getinformation()
+{
+  var yesButton = document.getElementById.checked("Yes").value;
+  var noButton = document.getElementById("No").value;
+  if(document.getElementById("Yes").checked == false)
+  {
+    alert("Terms and Conditions Required")
+  }
+  if(document.getElementById("No").checked == true) 
+  {
+    alert("Terms and Conditions Required")
+
+  }
+}
+ 
+
+ 
 
 </script>
 
