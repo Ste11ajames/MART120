@@ -17,7 +17,7 @@ var diameters = [];
 var shapeXSpeeds = [];
 var shapeYSpeeds = [];
 
-var rColor = ['red', 'green', 'yellow', 'orange', 'pink'];
+var rColor = ['red', 'green', 'yellow', 'orange', 'purple'];
 var randomIndex = Math.floor(Math.random() * rColor.length);
 var randomColor = rColor [randomIndex];
 
@@ -38,7 +38,7 @@ function setup()
     createCanvas(800, 800);
     
      // random speeds
-     for (var i = 0; i < 5; i++) {
+     for (var i = 0; i < 10; i++) {
         shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
         shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
         shapeXs[i] = getRandomNumber(800);
@@ -74,17 +74,19 @@ function draw()
 
 
   // obstacle color
-  fill(randomColor);
+  
   // draw obstacle
-  for (var i = 0; i < shapeXs.length; i++) {
-      circle(shapeXs[i], shapeYs[i], diameters[i]);
+  for(var i = 0; i < shapeXs.length; i++ ) {
+    randomIndex = Math.floor(Math.random()*rColor.length);
+    fill(rColor[randomIndex]);circle(shapeXs[i], shapeYs[i], diameters[i]);
       shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
       shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
 
 
 
-      fill(randomColor);
+     
       // move obstacle
+      
       shapeXs[i] += shapeXSpeeds[i];
       shapeYs[i] += shapeYSpeeds[i];
       // has obstacle gone out of bounds
