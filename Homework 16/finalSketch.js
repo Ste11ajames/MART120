@@ -10,7 +10,7 @@ var leftarmX = 147;
 var leftarmY = 195;
 
 
-var rightarmX = 358;
+var rightarmX = 350;
 var rightarmY = 195;
 
 
@@ -26,7 +26,7 @@ var movement = 13;
 
 function setup()
 {
-    createCanvas(500, 600);
+    createCanvas(600, 600);
     movement = floor(random(1,11));
 
 }
@@ -41,7 +41,7 @@ function draw()
         sizeDirection *=-1;
         count = 0;
     }
-    text("FINAL PROJECT!", 130,560);
+    text("FINAL PROJECT!", 160,560);
     
 
     // head
@@ -56,11 +56,13 @@ function draw()
    headX += movement;
 
  // eyes
-    strokeWeight(8);
+    strokeWeight(3);
     fill(255, 204, 100);
-    point(220,75,10);
-    point(288,75,10);
-
+     //eye pupil
+ circle(220,75,6);
+//eyes
+circle(220,75,19);
+circle(288,75,19);
 // nose
     triangle(250,90,255,82,260,90);
     
@@ -75,9 +77,15 @@ function draw()
     line(360,175,390,120);
     line(175,50,100,120);
     line(390,120,325,50);
+    
+     //hat
+    triangle(333,50,166,50,252,5);
+
     // hairtie1
     fill(784,918,608)
     circle(hairtieX,hairtieY,20);
+
+   
     
     // hairtie2
     circle(175,50,20);
@@ -90,6 +98,18 @@ function draw()
     fill('#fae');
     
     triangle(224,185,274,310,324,185)
+
+    //skirt
+triangle(274,310,208,364,340,364);
+
+//belt
+rect(200,310,150,15);
+
+//bow tie 
+fill(56,76,97);
+circle(274,195,20);
+triangle(260,195,220,185,220,205);
+triangle(287,195,330,185,330,205);
 
     // right arm
     fill(255, 204, 0);
@@ -113,7 +133,7 @@ function draw()
 
     //right glove
     fill(155,15,15);
-    ellipse(471,202,30,19);
+    ellipse(460,202,30,19);
     
     //left glove
     fill(155,15,15);
